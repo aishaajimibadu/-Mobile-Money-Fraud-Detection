@@ -24,7 +24,10 @@ def load_model():
     return bundle["pipeline"], bundle["numeric_features"], bundle["categorical_features"], bundle.get("model" , None)  
 @st.cache_data
 def load_sample_data():
-    return pd.read_csv("data/mobile_money_transactions.csv")
+    try: 
+        return pd.read_csv("data/mobile_money_transactions.csv")
+    except FileNoteFoundError:
+        return pd.DataFrame() # returns empty table if file missing
 
 pipeline, numeric_features, categorical_features, model = load_model()
 
