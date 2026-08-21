@@ -26,7 +26,7 @@ def load_model():
 def load_sample_data():
     return pd.read_csv("data/mobile_money_transactions.csv")
 
-pipeline, numeric_features, categorical_features = load_model()
+pipeline, numeric_features, categorical_features, model = load_model()
 
 st.title("🛡️ Mobile-Money Fraud Detection")
 st.caption("3MTT NextGen Data Science Capstone — DS-09")
