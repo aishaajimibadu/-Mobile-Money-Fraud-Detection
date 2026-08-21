@@ -21,8 +21,7 @@ st.set_page_config(page_title="Mobile-Money Fraud Detection", page_icon="🛡️
 @st.cache_resource
 def load_model():
     bundle = joblib.load("models/fraud_model.pkl")
-    return bundle["pipeline"], bundle["numeric_features"], bundle["categorical_features"]
-
+    return bundle["pipeline"], bundle["numeric_features"], bundle["categorical_features"], bundle.get("model" , None)  
 @st.cache_data
 def load_sample_data():
     return pd.read_csv("data/mobile_money_transactions.csv")
