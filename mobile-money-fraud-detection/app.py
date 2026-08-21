@@ -26,7 +26,7 @@ def load_model():
 def load_sample_data():
     try: 
         return pd.read_csv("data/mobile_money_transactions.csv")
-    except FileNoteFoundError:
+    except FileNotFoundError:
         return pd.DataFrame() # returns empty table if file missing
 
 pipeline, numeric_features, categorical_features, model = load_model()
