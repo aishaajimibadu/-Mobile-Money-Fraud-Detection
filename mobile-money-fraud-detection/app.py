@@ -20,7 +20,7 @@ st.set_page_config(page_title="Mobile-Money Fraud Detection", page_icon="🛡️
 
 @st.cache_resource
 def load_model():
-    bundle = joblib.load("models/fraud_model.pkl")
+    bundle = joblib.load("mobile-money-fraud-detection/models/fraud_model.pkl")
     return bundle["pipeline"], bundle["numeric_features"], bundle["categorical_features"]
 
 @st.cache_data
